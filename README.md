@@ -73,7 +73,9 @@ ecommerce-sales-analytics/
 │   └── weekday_revenue.png
 │
 ├── powerbi/
-│   └── ecommerce_sales_dashboard.pbix
+│   ├── ecommerce_sales_dashboard.pbix
+│   └── screenshots/
+│       └── dashboard_overview.png
 │
 ├── report/
 │   └── insights_and_recommendations.md
@@ -83,9 +85,16 @@ ecommerce-sales-analytics/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-Data Preparation
+```
+
+---
+
+## Data Preparation
+
 The raw dataset was cleaned before analysis.
-Cleaning steps
+
+### Cleaning Steps
+
 1. Removed duplicate records.
 2. Removed rows with missing product descriptions.
 3. Identified transactions with missing CustomerID.
@@ -93,17 +102,25 @@ Cleaning steps
 5. Removed transactions with negative quantities.
 6. Removed transactions with non-positive unit prices.
 7. Created a Revenue column.
-Revenue Calculation
+
+### Revenue Calculation
+
 Revenue = Quantity × UnitPrice
-Feature Engineering
+
+### Feature Engineering
+
 The following date-related features were created:
+
 - Year
 - Month
 - MonthName
 - Day
 - Weekday
-Final Dataset
+
+### Final Dataset
+
 After cleaning:
+
 - Rows: 524,878
 - Columns: 14
 - Total Revenue: approximately 10.64M
@@ -112,52 +129,92 @@ After cleaning:
 - Identifiable Customers: approximately 4,338
 - Countries: 38
 - Products: 3,922
-Exploratory Data Analysis
+
+---
+
+## Exploratory Data Analysis
+
 The following analyses were performed:
-Sales Analysis
+
+### Sales Analysis
+
 - Overall revenue
 - Monthly revenue trends
 - Yearly revenue
 - Quantity sold
 - Weekday sales patterns
-Country Analysis
+
+### Country Analysis
+
 Revenue was analyzed across countries to identify the strongest markets.
-Product Analysis
+
+### Product Analysis
+
 Products were ranked according to total revenue to identify high-performing products.
-Customer Analysis
+
+### Customer Analysis
+
 Customers with valid CustomerID values were analyzed according to their revenue contribution.
-Correlation Analysis
+
+### Correlation Analysis
+
 The relationship between:
+
 - Quantity
 - UnitPrice
 - Revenue
-was examined using a correlation matrix.
-Quantity and Revenue showed a strong positive correlation of approximately 0.91.
-Power BI Dashboard
+
+was examined using a correlation matrix. Quantity and Revenue showed a strong positive correlation of approximately 0.91.
+
+---
+
+## Power BI Dashboard
+
 An interactive Power BI dashboard was created containing:
-KPI Cards
+
+### KPI Cards
+
 - Total Revenue
 - Total Orders
 - Total Quantity Sold
 - Total Customers
-Visualizations
+
+### Visualizations
+
 - Monthly Revenue Trend
 - Top 10 Countries by Revenue
 - Top 10 Products by Revenue
 - Top 10 Customers by Revenue
-Interactive Filters
+
+### Interactive Filters
+
 - Year
 - Month
 - Country
+
 The dashboard allows users to interactively filter the sales data and explore business performance.
-Key Insights
+
+---
+
+## Dashboard Preview
+
+![E-Commerce Sales Analytics Dashboard](powerbi/screenshots/dashboard_overview.png)
+
+---
+
+## Key Insights
+
 1. The United Kingdom is the dominant revenue-generating market.
 2. Several European markets such as the Netherlands, EIRE, Germany, and France contribute significant additional revenue.
 3. Revenue is concentrated among a relatively small number of high-performing products.
 4. A group of high-value customers contributes significantly to overall revenue.
 5. Quantity and Revenue have a strong positive correlation of approximately 0.91.
 6. Missing CustomerID values limit customer-level analysis for some transactions.
-Business Recommendations
+
+---
+
+## Business Recommendations
+
 1. Maintain strong inventory availability in the UK market.
 2. Explore expansion opportunities in promising international markets.
 3. Prioritize high-revenue products for inventory planning.
@@ -165,30 +222,63 @@ Business Recommendations
 5. Use monthly sales trends for demand forecasting and inventory planning.
 6. Improve customer information collection to strengthen customer segmentation.
 7. Monitor cancellations and returns separately to identify operational issues.
-How to Run the Project
+
+---
+
+## How to Run the Project
+
 1. Clone the repository
+
+```bash
 git clone https://github.com/fazilkhan-dev/ecommerce-sales-analytics.git
+```
+
 2. Navigate to the project
+
+```bash
 cd ecommerce-sales-analytics
+```
+
 3. Create a virtual environment
+
+```bash
 py -3.12 -m venv .venv
-4. Activate the environment
-Windows PowerShell:
+```
+
+4. Activate the environment (Windows PowerShell)
+
+```bash
 .\.venv\Scripts\Activate.ps1
+```
+
 5. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
+
 6. Open the notebook
+
+```bash
 jupyter lab
-Open:
-notebooks/EDA.ipynb
-Project Deliverables
+```
+
+Open: `notebooks/EDA.ipynb`
+
+---
+
+## Project Deliverables
+
 - Cleaned dataset
 - EDA notebook
 - Data visualizations
 - Power BI dashboard
 - Business insights and recommendations
-- Project documentations
+- Project documentation
 - Presentation
-Author
-FAZIL KHAN
-GitHub: fazilkhan-dev
+
+---
+
+## Author
+
+**FAZIL KHAN**
